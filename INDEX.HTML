@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Similar a Coto Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+</head>
+<body onload="initCarousels()">
+    <header>
+        <div class="logo">
+            <img src="https://www.cotodigital3.com.ar/Content/images/LogoCotoDigital.png" alt="Coto Digital">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="¿Qué querés comprar hoy?">
+        </div>
+        <div class="contact">
+            <button onclick="openContactModal()">Contacto</button>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('ofertas-menu')">Ofertas</button>
+                <ul id="ofertas-menu" class="submenu">
+                    <li onclick="showCategory('ofertas')">Subcategoría 1</li>
+                    <li onclick="showCategory('ofertas')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('almacen-menu')">Almacén</button>
+                <ul id="almacen-menu" class="submenu">
+                    <li onclick="showCategory('almacen')">Subcategoría 1</li>
+                    <li onclick="showCategory('almacen')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('bebidas-menu')">Bebidas</button>
+                <ul id="bebidas-menu" class="submenu">
+                    <li onclick="showCategory('bebidas')">Subcategoría 1</li>
+                    <li onclick="showCategory('bebidas')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('frescos-menu')">Frescos</button>
+                <ul id="frescos-menu" class="submenu">
+                    <li onclick="showCategory('frescos')">Subcategoría 1</li>
+                    <li onclick="showCategory('frescos')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('congelados-menu')">Congelados</button>
+                <ul id="congelados-menu" class="submenu">
+                    <li onclick="showCategory('congelados')">Subcategoría 1</li>
+                    <li onclick="showCategory('congelados')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('limpieza-menu')">Limpieza</button>
+                <ul id="limpieza-menu" class="submenu">
+                    <li onclick="showCategory('limpieza')">Subcategoría 1</li>
+                    <li onclick="showCategory('limpieza')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('perfumeria-menu')">Perfumería</button>
+                <ul id="perfumeria-menu" class="submenu">
+                    <li onclick="showCategory('perfumeria')">Subcategoría 1</li>
+                    <li onclick="showCategory('perfumeria')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('electro-menu')">Electro</button>
+                <ul id="electro-menu" class="submenu">
+                    <li onclick="showCategory('electro')">Subcategoría 1</li>
+                    <li onclick="showCategory('electro')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('textil-menu')">Textil</button>
+                <ul id="textil-menu" class="submenu">
+                    <li onclick="showCategory('textil')">Subcategoría 1</li>
+                    <li onclick="showCategory('textil')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('hogar-menu')">Hogar</button>
+                <ul id="hogar-menu" class="submenu">
+                    <li onclick="showCategory('hogar')">Subcategoría 1</li>
+                    <li onclick="showCategory('hogar')">Subcategoría 2</li>
+                </ul>
+            </li>
+            <li>
+                <button class="hamburger" onclick="toggleMenu('aire_libre-menu')">Aire libre</button>
+                <ul id="aire_libre-menu" class="submenu">
+                    <li onclick="showCategory('aire_libre')">Subcategoría 1</li>
+                    <li onclick="showCategory('aire_libre')">Subcategoría 2</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section id="inicio" class="inicio">
+            <h2>Ofertas</h2>
+            <div class="carousel" id="ofertas-carousel"></div>
+            <button onclick="showCatalog('ofertas')">Ver todo</button>
+            <h2>Almacén</h2>
+            <div class="carousel" id="almacen-carousel"></div>
+            <button onclick="showCatalog('almacen')">Ver todo</button>
+            <h2>Bebidas</h2>
+            <div class="carousel" id="bebidas-carousel"></div>
+            <button onclick="showCatalog('bebidas')">Ver todo</button>
+            <h2>Frescos</h2>
+            <div class="carousel" id="frescos-carousel"></div>
+            <button onclick="showCatalog('frescos')">Ver todo</button>
+            <h2>Congelados</h2>
+            <div class="carousel" id="congelados-carousel"></div>
+            <button onclick="showCatalog('congelados')">Ver todo</button>
+            <h2>Limpieza</h2>
+            <div class="carousel" id="limpieza-carousel"></div>
+            <button onclick="showCatalog('limpieza')">Ver todo</button>
+            <h2>Perfumería</h2>
+            <div class="carousel" id="perfumeria-carousel"></div>
+            <button onclick="showCatalog('perfumeria')">Ver todo</button>
+            <h2>Electro</h2>
+            <div class="carousel" id="electro-carousel"></div>
+            <button onclick="showCatalog('electro')">Ver todo</button>
+            <h2>Textil</h2>
+            <div class="carousel" id="textil-carousel"></div>
+            <button onclick="showCatalog('textil')">Ver todo</button>
+            <h2>Hogar</h2>
+            <div class="carousel" id="hogar-carousel"></div>
+            <button onclick="showCatalog('hogar')">Ver todo</button>
+            <h2>Aire libre</h2>
+            <div class="carousel" id="aire_libre-carousel"></div>
+            <button onclick="showCatalog('aire_libre')">Ver todo</button>
+        </section>
+
+        <section id="catalog" class="catalog" style="display: none;">
+            <h2 id="catalog-title"></h2>
+            <div id="catalog-items" class="catalog-items"></div>
+            <button onclick="closeCatalog()">Cerrar</button>
+        </section>
+
+        <aside id="cart" class="cart">
+            <h3>Carrito de Compras</h3>
+            <ul id="cart-items"></ul>
+            <div class="total">
+                Total: <span id="total-price">$0</span>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Ventana Modal de Contacto -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contacto</h2>
+            <p>Teléfono: +1 234 567 890</p>
+            <p>Email: contacto@coto.com</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
